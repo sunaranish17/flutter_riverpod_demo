@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_flutter_demo/screens/notifiers/change_notifier.dart';
 import 'package:riverpod_flutter_demo/screens/providers/future_provider.dart';
 import 'package:riverpod_flutter_demo/screens/providers/provider_page.dart';
 import 'package:riverpod_flutter_demo/screens/providers/state_provider.dart';
@@ -26,30 +27,15 @@ class _HomeState extends State<Home> {
         currentIndex: index,
         items: [
           BottomNavigationBarItem(
-            icon: Text(
-              "Riverpod",
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
+            icon: Icon(Icons.flutter_dash),
             label: "Providers",
           ),
           BottomNavigationBarItem(
-            icon: Text(
-              "Riverpod",
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
+            icon: Icon(Icons.flutter_dash),
             label: "Notifiers",
           ),
           BottomNavigationBarItem(
-            icon: Text(
-              "Riverpod",
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
+            icon: Icon(Icons.flutter_dash),
             label: "Modifiers",
           ),
         ],
@@ -64,6 +50,8 @@ class _HomeState extends State<Home> {
     switch (index) {
       case 0:
         return buildProviderPage(context);
+      case 1:
+        return buildNotifierPage(context);
       default:
         return Container();
     }
@@ -114,6 +102,32 @@ class _HomeState extends State<Home> {
             },
             child: Text("Stream Provider"),
           )
+        ],
+      );
+
+  Widget buildNotifierPage(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChangeNotifierPage()),
+              );
+            },
+            child: Text("Change Notifier"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => StateProviderPage(),
+                ),
+              );
+            },
+            child: Text("State Notifier"),
+          ),
         ],
       );
 }
