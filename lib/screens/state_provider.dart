@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final stateProvider = StateProvider<int>((ref) => 0);
+final stateProvider = StateProvider.autoDispose<int>((ref) => 0);
 
 class StateProviderPage extends ConsumerWidget {
   const StateProviderPage({Key? key}) : super(key: key);
@@ -14,13 +14,25 @@ class StateProviderPage extends ConsumerWidget {
       appBar: AppBar(
         title: Text("State Provider"),
       ),
-      body: Center(
-        child: Text(
-          "Value: $counter",
-          style: TextStyle(
-            fontSize: 24,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              "Value: $counter",
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
           ),
-        ),
+          ElevatedButton(
+            onPressed: () {
+              final reset = ref.read(stateProvider);
+              reset.state = 0;
+            },
+            child: Text("Reset"),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

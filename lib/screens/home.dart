@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_flutter_demo/screens/future_provider.dart';
 import 'package:riverpod_flutter_demo/screens/provider_page.dart';
 import 'package:riverpod_flutter_demo/screens/state_provider.dart';
 
@@ -38,6 +39,17 @@ class Home extends StatelessWidget {
                     );
                   },
                   child: Text("State Provider"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FutureProviderPage(),
+                      ),
+                    );
+                  },
+                  child: Text("Future Provider"),
                 )
               ],
             ),
