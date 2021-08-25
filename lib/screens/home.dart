@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_flutter_demo/screens/future_provider.dart';
-import 'package:riverpod_flutter_demo/screens/provider_page.dart';
-import 'package:riverpod_flutter_demo/screens/state_provider.dart';
-import 'package:riverpod_flutter_demo/screens/stream_provider.dart';
+import 'package:riverpod_flutter_demo/screens/providers/future_provider.dart';
+import 'package:riverpod_flutter_demo/screens/providers/provider_page.dart';
+import 'package:riverpod_flutter_demo/screens/providers/state_provider.dart';
+import 'package:riverpod_flutter_demo/screens/providers/stream_provider.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
