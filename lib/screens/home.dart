@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_flutter_demo/screens/notifiers/change_notifier.dart';
+import 'package:riverpod_flutter_demo/screens/notifiers/state_notifier.dart';
 import 'package:riverpod_flutter_demo/screens/providers/future_provider.dart';
 import 'package:riverpod_flutter_demo/screens/providers/provider_page.dart';
 import 'package:riverpod_flutter_demo/screens/providers/state_provider.dart';
@@ -122,7 +123,7 @@ class _HomeState extends State<Home> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => StateProviderPage(),
+                  builder: (context) => StateNotifierPage(),
                 ),
               );
             },
