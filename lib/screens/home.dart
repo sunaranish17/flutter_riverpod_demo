@@ -53,6 +53,8 @@ class _HomeState extends State<Home> {
         return buildProviderPage(context);
       case 1:
         return buildNotifierPage(context);
+      case 2:
+        return buildModifierPage(context);
       default:
         return Container();
     }
@@ -107,6 +109,32 @@ class _HomeState extends State<Home> {
       );
 
   Widget buildNotifierPage(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChangeNotifierPage()),
+              );
+            },
+            child: Text("Change Notifier"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => StateNotifierPage(),
+                ),
+              );
+            },
+            child: Text("State Notifier"),
+          ),
+        ],
+      );
+
+  Widget buildModifierPage(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
