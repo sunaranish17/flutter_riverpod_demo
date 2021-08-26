@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_flutter_demo/screens/modifiers/family_object_notifier.dart';
 import 'package:riverpod_flutter_demo/screens/modifiers/family_primitive_modifier.dart';
 import 'package:riverpod_flutter_demo/screens/notifiers/change_notifier.dart';
 import 'package:riverpod_flutter_demo/screens/notifiers/state_notifier.dart';
@@ -152,11 +153,11 @@ class _HomeState extends State<Home> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => StateNotifierPage(),
+                  builder: (context) => FamilyObjectModifierPage(),
                 ),
               );
             },
-            child: Text("State Notifier"),
+            child: Text("Family Object Notifier"),
           ),
         ],
       );
