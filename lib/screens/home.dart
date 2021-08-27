@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_flutter_demo/screens/modifiers/auto_dispose_modifier.dart';
 import 'package:riverpod_flutter_demo/screens/modifiers/family_object_notifier.dart';
 import 'package:riverpod_flutter_demo/screens/modifiers/family_primitive_modifier.dart';
 import 'package:riverpod_flutter_demo/screens/notifiers/change_notifier.dart';
@@ -157,7 +158,18 @@ class _HomeState extends State<Home> {
                 ),
               );
             },
-            child: Text("Family Object Notifier"),
+            child: Text("Family Object Modifier"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AutoDisposeModifierPage(),
+                ),
+              );
+            },
+            child: Text("Auto Dispose Modifier"),
           ),
         ],
       );
