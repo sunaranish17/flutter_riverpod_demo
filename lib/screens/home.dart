@@ -8,6 +8,7 @@ import 'package:riverpod_flutter_demo/screens/providers/future_provider.dart';
 import 'package:riverpod_flutter_demo/screens/providers/provider_page.dart';
 import 'package:riverpod_flutter_demo/screens/providers/state_provider.dart';
 import 'package:riverpod_flutter_demo/screens/providers/stream_provider.dart';
+import 'package:riverpod_flutter_demo/screens/todo/todo_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -107,6 +108,17 @@ class _HomeState extends State<Home> {
               );
             },
             child: Text("Stream Provider"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ToDoPage(),
+                ),
+              );
+            },
+            child: Text("To Do from Fun with Flutter"),
           )
         ],
       );
