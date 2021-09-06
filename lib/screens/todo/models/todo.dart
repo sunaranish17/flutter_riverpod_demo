@@ -9,9 +9,8 @@ final _sampleTodos = [
   Todo('Learn Riverpod'),
 ];
 
-// final todosProvider = StateNotifierProvider((ref) {
-//   return ;
-// });
+final todosProvider =
+    StateNotifierProvider((ref) => ToDoNotifier(ref.read, _sampleTodos));
 
 class ToDoNotifier extends StateNotifier<List<Todo>> {
   ToDoNotifier(this.read, [List<Todo>? state]) : super(<Todo>[]);
