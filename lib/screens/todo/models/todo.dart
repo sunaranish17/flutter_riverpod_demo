@@ -12,6 +12,11 @@ final _sampleTodos = [
 final todosProvider =
     StateNotifierProvider((ref) => ToDoNotifier(ref.read, _sampleTodos));
 
+final completedTodos = Provider<List<Todo>>((ref) {
+  final todos = ref.watch(todosProvider);
+  return todos.where((todo) => todo.completed).toList();
+});
+
 class ToDoNotifier extends StateNotifier<List<Todo>> {
   ToDoNotifier(this.read, [List<Todo>? state]) : super(<Todo>[]);
 

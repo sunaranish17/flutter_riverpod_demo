@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_flutter_demo/screens/todo/models/todo.dart';
 
-final _currentToDo = Provider<Todo>((ref) => throw UnimplementedError());
+final currentToDo = Provider<Todo>((ref) => throw UnimplementedError());
 
 class ToDoItem extends StatefulWidget {
   const ToDoItem({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _ToDoItemState extends State<ToDoItem> {
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, _) {
-      final todo = ref.watch(_currentToDo);
+      final todo = ref.watch(currentToDo);
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: Dismissible(
