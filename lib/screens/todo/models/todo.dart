@@ -27,7 +27,6 @@ class ToDoNotifier extends StateNotifier<List<Todo>> {
   }
 
   void toggle(String id) {
-    // Method 5
     if (read(settingsProvider).state.deleteOnComplete) {
       remove(id);
       return;
