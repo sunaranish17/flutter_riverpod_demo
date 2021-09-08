@@ -31,6 +31,7 @@ class StateProviderPage extends ConsumerWidget {
               ),
             ),
           ),
+          TestWidget(),
           ElevatedButton(
             onPressed: () {
               final reset = ref.read(stateProvider);
@@ -49,6 +50,29 @@ class StateProviderPage extends ConsumerWidget {
         },
         child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class TestWidget extends ConsumerStatefulWidget {
+  const TestWidget({Key? key}) : super(key: key);
+
+  @override
+  _TestWidgetState createState() => _TestWidgetState();
+}
+
+class _TestWidgetState extends ConsumerState<TestWidget> {
+  @override
+  void initState() {
+    super.initState();
+    ref.read(stateProvider);
+  }
+
+  @override
+  Widget build(BuildContext contex) {
+    final count = ref.watch(stateProvider).state;
+    return Container(
+      child: Text("count>> : $count"),
     );
   }
 }
